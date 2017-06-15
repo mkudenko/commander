@@ -7,6 +7,8 @@ use Drupal\KernelTests\KernelTestBase;
 
 /**
  * Class CommanderTest.
+ *
+ * @group commander
  */
 class CommanderTest extends KernelTestBase {
 

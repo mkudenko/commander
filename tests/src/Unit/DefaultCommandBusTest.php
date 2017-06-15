@@ -10,6 +10,8 @@ use Drupal\Tests\UnitTestCase;
 
 /**
  * Class DefaultCommandBusTest.
+ *
+ * @group commander
  */
 class DefaultCommandBusTest extends UnitTestCase {
 
