@@ -29,7 +29,7 @@ class DefaultCommandBus implements CommandBusInterface {
   }
 
   /**
-   * Executes the command.
+   * Gets the command handler to execute the command.
    *
    * @param \Drupal\commander\Contracts\CommandInterface $command
    *   Command object.
@@ -38,8 +38,10 @@ class DefaultCommandBus implements CommandBusInterface {
    *   Command execution result.
    */
   public function execute(CommandInterface $command) {
+    $id = $command->handlerPluginId();
+
     /** @var \Drupal\commander\Plugin\CommandHandlerInterface $handler */
-    $handler = $this->commandHandlerManager->createInstance($command->handlerPluginId());
+    $handler = $this->commandHandlerManager->createInstance($id);
 
     return $handler->execute($command);
   }

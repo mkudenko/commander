@@ -2,7 +2,6 @@
 
 namespace Drupal\commander\Plugin;
 
-use Drupal\commander\Contracts\CommandInterface;
 use Drupal\Component\Plugin\PluginInspectionInterface;
 
 /**
@@ -13,9 +12,9 @@ interface CommandHandlerInterface extends PluginInspectionInterface {
   /**
    * Executes the command.
    *
-   * @param \Drupal\commander\Contracts\CommandInterface $command
-   *   Command.
+   * @param object $command
+   *   Command object.
    */
-  public function execute(CommandInterface $command);
+  public function execute($command);
 
 }

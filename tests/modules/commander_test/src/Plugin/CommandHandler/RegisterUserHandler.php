@@ -2,7 +2,6 @@
 
 namespace Drupal\commander_test\Plugin\CommandHandler;
 
-use Drupal\commander\Contracts\CommandInterface;
 use Drupal\commander\Plugin\CommandHandlerBase;
 
 /**
@@ -18,14 +17,13 @@ class RegisterUserHandler extends CommandHandlerBase {
   /**
    * Handled registering the user in a test.
    *
-   * @param \Drupal\commander\Contracts\CommandInterface $command
+   * @param \Drupal\commander_test\Commands\RegisterUser $command
    *   Command object.
    *
    * @return \Drupal\commander_test\Commands\RegisterUser
    *   Executed command.
    */
-  public function execute(CommandInterface $command) {
-    /** @var \Drupal\commander_test\Commands\RegisterUser $command */
+  public function execute($command) {
     $command->registered = TRUE;
 
     return $command;
